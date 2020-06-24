@@ -1,0 +1,35 @@
+ static void Main(string[] args)
+        {
+            int fiz = Convert.ToInt32(Console.ReadLine());
+            int buz = Convert.ToInt32(Console.ReadLine());
+
+            var arr = Fizz(fiz, buz);
+
+            foreach(var x in arr)
+                Console.WriteLine(x);
+        }
+
+        static string[] Fizz(int fiz, int buz)
+        {
+            int i = 0;
+            string[] output = new string[100];
+
+            while (i < 100)
+            {
+                if (i % fiz == 0 && i % buz == 0)
+                {
+                    output[i] = "FizzBuzz";
+                }
+                else if (i % fiz == 0)
+                    output[i] = "Fizz";
+                else if (i % buz == 0)
+                    output[i] = "Buzz";
+                else
+                {
+                    output[i] = i.ToString();
+                }
+                i++;
+            }
+
+            return output;
+        }
