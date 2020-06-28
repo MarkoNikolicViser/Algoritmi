@@ -1,0 +1,13 @@
+public class Solution {
+    public int[] SortArrayByParity(int[] A) {
+      List<int> lista=new List<int>();
+        
+        foreach(var x in A)     //prvo proverava dal su parni
+            if(x%2==0)
+                lista.Add(x);
+       
+        foreach(var x in A)   //moraju dve petlje da se ne bi pomesali brojevi
+            if(x%2!=0)
+                lista.Add(x);
+        return lista.ToArray();
+    }}
